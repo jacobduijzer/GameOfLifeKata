@@ -36,6 +36,6 @@ public class GameOfLifeTests
         var result = gameOfLife.CalculateNextGeneration(matrix);
 
         // ASSERT
-        Assert.Equal(result, @"........");
+        Assert.Equal(@"........", result);
     }
 }
