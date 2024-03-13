@@ -1,5 +1,3 @@
-using GameOfLifeKata.Core;
-
 namespace GameOfLifeKata.UnitTests;
 
 public class GameOfLifeTests
@@ -14,7 +12,7 @@ public class GameOfLifeTests
 ........
 ";
 
-        var gameOfLife = new GameOfLife();
+        var gameOfLife = new GameOfLife.Core.GameOfLife();
 
        // ACT
        var result = gameOfLife.CalculateNextGeneration(matrix);
@@ -32,7 +30,7 @@ public class GameOfLifeTests
         // ARRANGE
         var matrix = @".*......";
 
-        var gameOfLife = new GameOfLife();
+        var gameOfLife = new GameOfLife.Core.GameOfLife();
 
         // ACT
         var result = gameOfLife.CalculateNextGeneration(matrix);
