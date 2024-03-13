@@ -1,3 +1,5 @@
+using GameOfLifeKata.Core;
+
 namespace GameOfLifeKata.UnitTests;
 
 public class GameOfLifeTests
@@ -12,7 +14,10 @@ public class GameOfLifeTests
 ........
 ";
 
+        var gameOfLife = new GameOfLife();
+
        // ACT
+       var result = gameOfLife.CalculateNextGeneration(matrix);
 
        // ASSERT
        Assert.Equal(result, @"........
@@ -20,6 +25,19 @@ public class GameOfLifeTests
 ...**...
 ........");
     }
-    
-    
+
+    [Fact]
+    public void KillNeighbours()
+    {
+        // ARRANGE
+        var matrix = @".*......";
+
+        var gameOfLife = new GameOfLife();
+
+        // ACT
+        var result = gameOfLife.CalculateNextGeneration(matrix);
+
+        // ASSERT
+        Assert.Equal(result, @"........");
+    }
 }
